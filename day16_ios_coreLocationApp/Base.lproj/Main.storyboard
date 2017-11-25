@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11761" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Dod-Gz-exa">
+                                <rect key="frame" x="40" y="631" width="319" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="7NO-dB-uQ1"/>
+                                    <constraint firstAttribute="width" constant="319" id="DO2-ox-t8o"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Standard"/>
+                                    <segment title="Satellite"/>
+                                    <segment title="Hybrid"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeMapView:" destination="BYZ-38-t0r" eventType="valueChanged" id="kTb-wF-aOI"/>
+                                </connections>
+                            </segmentedControl>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="3O7-ZF-OXs">
+                                <rect key="frame" x="40" y="55" width="306" height="444"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="306" id="ChS-2e-i4x"/>
+                                </constraints>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dSa-BS-jLK">
+                                <rect key="frame" x="129" y="552" width="144" height="35"/>
+                                <color key="backgroundColor" red="0.91241892440000005" green="1" blue="0.64365592319999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="144" id="awa-nQ-jtQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="Detect Location">
+                                    <color key="titleColor" red="0.90102961029999995" green="0.36939380789999998" blue="0.60199156809999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="detectButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fcO-1R-vlr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90102961029999995" green="0.36939380789999998" blue="0.60199156809999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="3O7-ZF-OXs" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="35" id="5JV-Sv-O3d"/>
+                            <constraint firstAttribute="trailing" secondItem="3O7-ZF-OXs" secondAttribute="trailing" constant="29" id="6Nf-gD-Fw7"/>
+                            <constraint firstItem="dSa-BS-jLK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="129" id="AWa-Hc-uMj"/>
+                            <constraint firstItem="3O7-ZF-OXs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="40" id="AnP-If-0H9"/>
+                            <constraint firstItem="Dod-Gz-exa" firstAttribute="top" secondItem="dSa-BS-jLK" secondAttribute="bottom" constant="44" id="FV9-ON-WhY"/>
+                            <constraint firstItem="Dod-Gz-exa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="40" id="YAe-Q9-v6L"/>
+                            <constraint firstAttribute="trailing" secondItem="Dod-Gz-exa" secondAttribute="trailing" constant="16" id="dnc-PU-1Hf"/>
+                            <constraint firstItem="dSa-BS-jLK" firstAttribute="top" secondItem="3O7-ZF-OXs" secondAttribute="bottom" constant="53" id="erb-DZ-LBl"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Dod-Gz-exa" secondAttribute="bottom" constant="8" symbolic="YES" id="gKe-kd-1FN"/>
+                            <constraint firstAttribute="trailing" secondItem="dSa-BS-jLK" secondAttribute="trailing" constant="102" id="gjE-KJ-Dxw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="myMapView" destination="3O7-ZF-OXs" id="ddO-16-tBz"/>
+                        <outlet property="mySegment" destination="Dod-Gz-exa" id="MQ2-fI-jRS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+</document>
